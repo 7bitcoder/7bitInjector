@@ -15,10 +15,10 @@ namespace sb::di
     {
         TypeId _serviceTypeId;
         TypeId _implementationTypeId;
-        std::shared_ptr<const std::string> _serviceKey;
-        std::shared_ptr<const std::string> _implementationKey;
+        std::shared_ptr<std::string> _serviceKey;
+        std::shared_ptr<std::string> _implementationKey;
         ServiceLifeTime _lifeTime;
-        std::shared_ptr<const IServiceFactory> _implementationFactory;
+        std::shared_ptr<IServiceFactory> _implementationFactory;
         ptrdiff_t _castOffset;
 
       public:
@@ -27,14 +27,14 @@ namespace sb::di
         /**
          * @brief Construct a new service descriptor object
          * @param serviceTypeId - service type identifier
-         * @param implementationTypeId - service implementation type identifier, type must inhetit from service type
+         * @param implementationTypeId - service implementation type identifier, a type must inherit from a service type
          * @param serviceKey - service key
          * @param implementationKey - service implementation key
-         * @param lifeTime - service life time: Singleton, Scoped or Transient
-         * @param implementationFactory - service implementation factory, can be nullptr in that case describer is
+         * @param lifeTime - service lifetime: Singleton, Scoped or Transient
+         * @param implementationFactory - service implementation factory can be nullptr in that case describer is
          * treated as alias
-         * @param castOffset - cast offset is a difference in bytes between implementation pointer and casted service
-         * pointer, should be non zero for multiinheritance scenarios
+         * @param castOffset - cast offset is a difference in bytes between implementation pointer and cast service
+         * pointer, should be non-zero for multi inheritance scenarios
          */
         ServiceDescriptor(const TypeId serviceTypeId, const TypeId implementationTypeId,
                           std::unique_ptr<std::string> serviceKey, std::unique_ptr<std::string> implementationKey,
@@ -84,7 +84,7 @@ namespace sb::di
         [[nodiscard]] const IServiceFactory *getImplementationFactory() const { return _implementationFactory.get(); }
 
         /**
-         * @brief Get the service cast offset, non zero for multiinheritance
+         * @brief Get the service cast offset, non-zero for multi inheritance
          */
         [[nodiscard]] ptrdiff_t getCastOffset() const { return _castOffset; }
 

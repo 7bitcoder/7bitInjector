@@ -37,12 +37,12 @@ namespace sb::di
         ServiceInstance &operator=(ServiceInstance &&other) = default;
 
         /**
-         * @brief Try get service instance implementation
+         * @brief Try to get service instance implementation
          */
         IServiceInstance *tryGetImplementation() { return _implementation.get(); }
 
         /**
-         * @brief Try get service instance implementation
+         * @brief Try to get service instance implementation
          */
         [[nodiscard]] const IServiceInstance *tryGetImplementation() const { return _implementation.get(); }
 
@@ -61,23 +61,23 @@ namespace sb::di
         [[nodiscard]] const IServiceInstance &getImplementation() const { return *_implementation; }
 
         /**
-         * @details cast offset is added to service pointer when get/release methods are used
+         * @details cast offset is added to a service pointer when get/release methods are used
          */
         void addCastOffset(const ptrdiff_t castOffset) { _castOffset += castOffset; }
 
         /**
-         * @details cast offset is added to service pointer when get/release methods are used
+         * @details cast offset is added to a service pointer when get/release methods are used
          */
         void setCastOffset(const ptrdiff_t castOffset) { _castOffset = castOffset; }
 
         /**
-         * @details cast offset is added to service pointer when get/release methods are used
+         * @details cast offset is added to a service pointer when get/release methods are used
          */
         [[nodiscard]] ptrdiff_t getCastOffset() const { return _castOffset; }
 
         /**
-         * @brief Checks if service instance is valid (implementation is not nullptr and implementation is valid)
-         * @details If service instance is invalid, get and move methods might lead to undefined behaviour
+         * @brief Checks if service instance is valid (implementation is not nullptr, and implementation is valid)
+         * @details If service instance is invalid, get and move methods might lead to undefined behavior
          */
         [[nodiscard]] bool isValid() const { return _implementation && _implementation->isValid(); }
 
@@ -88,7 +88,7 @@ namespace sb::di
 
         /**
          * @brief Returns service pointer as T *
-         * @details The client is responsible for ensuring that the T type is correct
+         * @details The client is responsible for ensuring that the T type is the correct
          *
          * Example:
          * @code{.cpp}
@@ -103,7 +103,7 @@ namespace sb::di
         /**
          * @brief Releases service ownership as pointer T *
          * @details The client is responsible for ensuring that the T type is correct
-         * @warning Using this method might cause memory leaks, client is responsible for managing this pointner
+         * @warning Using this method might cause memory leaks, client is responsible for managing this pointer
          * lifetime, the best approach is to immediately wrap this pointer with proper std::unique_ptr<T>
          *
          * Example:
@@ -115,7 +115,7 @@ namespace sb::di
 
         /**
          * @brief Moves out service as unique_ptr<T>
-         * @details The client is responsible for ensuring that the T type is correct
+         * @details The client is responsible for ensuring that the T type is the correct
          *
          * Example:
          * @code{.cpp}
@@ -126,7 +126,7 @@ namespace sb::di
 
         /**
          * @brief Moves out service as T
-         * @details The client is responsible for ensuring that the T type is correct
+         * @details The client is responsible for ensuring that the T type is the correct
          *
          * Example:
          * @code{.cpp}
@@ -140,7 +140,7 @@ namespace sb::di
 
         /**
          * @brief Copies service as T
-         * @details The client is responsible for ensuring that the T type is correct
+         * @details The client is responsible for ensuring that the T type is the correct
          *
          * Example:
          * @code{.cpp}
@@ -150,7 +150,7 @@ namespace sb::di
         template <class T> T copyAs() { return *static_cast<T *>(applyOffset(getImplementation().getForMoveOut())); }
 
         /**
-         * @brief Clears service instance (implemnentation is reset)
+         * @brief Clears service instance (implementation is reset)
          * @details after clearing instance becomes invalid
          */
         void clear()

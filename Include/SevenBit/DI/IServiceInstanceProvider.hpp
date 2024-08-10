@@ -33,33 +33,33 @@ namespace sb::di
         /**
          * @brief Get sync mutex
          * @details Mutex can be used to synchronize service accesses between threads, can be null if synchronization is
-         * not needed
+         * unnecessary
          */
         virtual std::recursive_mutex *tryGetSyncMutex() = 0;
 
         /**
          * @brief Returns service instance reference, might throw exception
-         * @details If service was not registered or was registered as transient, method throws exception
+         * @details If the service was not registered or was registered as transient, method throws exception
          * @throws sb::di::ServiceNotFoundException
          */
         virtual const ServiceInstance &getInstance(TypeId serviceTypeId) = 0;
 
         /**
          * @brief Returns service instance reference, might throw exception
-         * @details If service was not registered or was registered as transient, method throws exception
+         * @details If the service was not registered or was registered as transient, method throws exception
          * @throws sb::di::ServiceNotFoundException
          */
         virtual const ServiceInstance &getKeyedInstance(TypeId serviceTypeId, std::string_view serviceKey) = 0;
 
         /**
          * @brief Returns service instance pointer
-         * @details If service was not registered or was registered as transient, method returns null
+         * @details If the service was not registered or was registered as transient, method returns null
          */
         virtual const ServiceInstance *tryGetInstance(TypeId serviceTypeId) = 0;
 
         /**
          * @brief Returns service instance pointer
-         * @details If service was not registered or was registered as transient, method returns null
+         * @details If the service was not registered or was registered as transient, method returns null
          */
         virtual const ServiceInstance *tryGetKeyedInstance(TypeId serviceTypeId, std::string_view serviceKey) = 0;
 
@@ -78,67 +78,70 @@ namespace sb::di
 
         /**
          * @brief Creates service instance unique pointer, might throw exception
-         * @details If service was not registered or was registered as scoped/singleton, method throw exception
+         * @details If the service was not registered or was registered as scoped/singleton, method throw exception
          * @throws sb::di::ServiceNotFoundException
          */
         virtual ServiceInstance createInstance(TypeId serviceTypeId) = 0;
 
         /**
          * @brief Creates service instance unique pointer, might throw exception
-         * @details If service was not registered or was registered as scoped/singleton, method throw exception
+         * @details If the service was not registered or was registered as scoped/singleton, method throw exception
          * @throws sb::di::ServiceNotFoundException
          */
         virtual ServiceInstance createKeyedInstance(TypeId serviceTypeId, std::string_view serviceKey) = 0;
 
         /**
          * @brief Creates service instance unique pointer, might be null
-         * @details If service was not registered or was registered as scoped/singleton, method returns invalid instance
+         * @details If the service was not registered or was registered as scoped/singleton, method returns invalid
+         * instance
          */
         virtual ServiceInstance tryCreateInstance(TypeId serviceTypeId) = 0;
 
         /**
          * @brief Creates service instance unique pointer, might be null
-         * @details If service was not registered or was registered as scoped/singleton, method returns invalid instance
+         * @details If the service was not registered or was registered as scoped/singleton, method returns invalid
+         * instance
          */
         virtual ServiceInstance tryCreateKeyedInstance(TypeId serviceTypeId, std::string_view serviceKey) = 0;
 
         /**
          * @brief Creates service instances
-         * @details If service was not registered or was registered as scoped/singleton, method returns null option
+         * @details If the service was not registered or was registered as scoped/singleton, method returns null option
          */
         virtual OneOrList<ServiceInstance> tryCreateInstances(TypeId serviceTypeId) = 0;
 
         /**
          * @brief Creates service instances
-         * @details If service was not registered or was registered as scoped/singleton, method returns null option
+         * @details If the service was not registered or was registered as scoped/singleton, method returns null option
          */
         virtual OneOrList<ServiceInstance> tryCreateKeyedInstances(TypeId serviceTypeId,
                                                                    std::string_view serviceKey) = 0;
 
         /**
          * @brief Creates service instance in place, might throw exception
-         * @details If service was not registered or was registered as scoped/singleton, method throws exception
+         * @details If the service was not registered or was registered as scoped/singleton, method throws exception
          * @throws sb::di::ServiceNotFoundException
          */
         virtual ServiceInstance createInstanceInPlace(TypeId serviceTypeId) = 0;
 
         /**
          * @brief Creates service instance in place, might throw exception
-         * @details If service was not registered or was registered as scoped/singleton, method throws exception
+         * @details If the service was not registered or was registered as scoped/singleton, method throws exception
          * @throws sb::di::ServiceNotFoundException
          */
         virtual ServiceInstance createKeyedInstanceInPlace(TypeId serviceTypeId, std::string_view serviceKey) = 0;
 
         /**
          * @brief Creates service instance in place
-         * @details If service was not registered or was registered as scoped/singleton, method returns invalid
+         * @details If the service was not registered or was registered as scoped/singleton, method returns invalid
          * instance
          */
         virtual ServiceInstance tryCreateInstanceInPlace(TypeId serviceTypeId) = 0;
 
         /**
          * @brief Creates service instance in place
-         * @details If service was not registered or was registered as scoped/singleton, method returns invalid instance
+         * @details If the service was not registered or was registered as scoped/singleton, method returns invalid
+         * instance
          */
         virtual ServiceInstance tryCreateKeyedInstanceInPlace(TypeId serviceTypeId, std::string_view serviceKey) = 0;
 

@@ -32,7 +32,7 @@ namespace sb::di
 
         /**
          * @brief Releases service ownership as void *
-         * @details If instance is owner of service it will release this ownership just like
+         * @details If instance is owner of service, it will release this ownership just like
          * std::unique_ptr<T>::release(), otherwise it will throw exception
          * @throws sb::di::CannotReleaseServiceException
          * @warning Using this method might cause memory leaks, client is responsible for managing this pointner
@@ -60,7 +60,7 @@ namespace sb::di
 
         /**
          * @brief Checks if service instance is valid
-         * @details If service instance is invalid, get and release methods might lead to undefined behaviour
+         * @details If service instance is invalid, get and release methods might lead to undefined behavior
          */
         [[nodiscard]] virtual bool isValid() const = 0;
 

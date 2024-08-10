@@ -85,8 +85,8 @@ namespace sb::di
         }
 
         /**
-         * @brief Returns service pointer, might be null
-         * @details If service was not registered or was registered as transient, method returns null
+         * @brief Return service pointer might be null
+         * @details If the service was not registered or was registered as transient, method returns null
          *
          * Example:
          * @code{.cpp}
@@ -108,8 +108,8 @@ namespace sb::di
         }
 
         /**
-         * @brief Returns service pointer, might be null
-         * @details If service was not registered or was registered as transient, method returns null
+         * @brief Return service pointer might be null
+         * @details If the service was not registered or was registered as transient, method returns null
          * @param serviceKey service key can be empty to get default service
          *
          * Example:
@@ -132,8 +132,8 @@ namespace sb::di
         }
 
         /**
-         * @brief Returns service reference, might throw exception
-         * @details If service was not registered or was registered as transient, method throws exception
+         * @brief Return service reference might throw exception
+         * @details If the service was not registered or was registered as transient, method throws exception
          * @throws sb::di::ServiceNotFoundException
          *
          * Example:
@@ -153,8 +153,8 @@ namespace sb::di
         }
 
         /**
-         * @brief Returns service reference, might throw exception
-         * @details If service was not registered or was registered as transient, method throws exception
+         * @brief Return service reference might throw exception
+         * @details If the service was not registered or was registered as transient, method throws exception
          * @throws sb::di::ServiceNotFoundException
          * @param serviceKey service key can be empty to get default service
          *
@@ -176,7 +176,7 @@ namespace sb::di
 
         /**
          * @brief Returns services
-         * @details If service was not registered or was registered as transient, method returns empty vector
+         * @details If the service was not registered or was registered as transient, method returns empty vector
          *
          * Example:
          * @code{.cpp}
@@ -204,7 +204,7 @@ namespace sb::di
 
         /**
          * @brief Returns services
-         * @details If service was not registered or was registered as transient, method returns empty vector
+         * @details If the service was not registered or was registered as transient, method returns empty vector
          * @param serviceKey service key can be empty to get default service
          *
          * Example:
@@ -233,7 +233,7 @@ namespace sb::di
 
         /**
          * @brief Creates service unique pointer, might be null
-         * @details If service was not registered or was registered as scoped/singleton, method returns null
+         * @details If the service was not registered or was registered as scoped/singleton, method returns null
          *
          * Example:
          * @code{.cpp}
@@ -255,7 +255,7 @@ namespace sb::di
 
         /**
          * @brief Creates service unique pointer, might be null
-         * @details If service was not registered or was registered as scoped/singleton, method returns null
+         * @details If the service was not registered or was registered as scoped/singleton, method returns null
          * @param serviceKey service key can be empty to get default service
          *
          * Example:
@@ -278,7 +278,7 @@ namespace sb::di
 
         /**
          * @brief Creates service unique pointer, might throw exception
-         * @details If service was not registered or was registered as scoped/singleton, method throws exception
+         * @details If the service was not registered or was registered as scoped/singleton, method throws exception
          * @throws sb::di::ServiceNotFoundException
          *
          * Example:
@@ -299,7 +299,7 @@ namespace sb::di
 
         /**
          * @brief Creates service unique pointer, might throw exception
-         * @details If service was not registered or was registered as scoped/singleton, method throws exception
+         * @details If the service was not registered or was registered as scoped/singleton, method throws exception
          * @throws sb::di::ServiceNotFoundException
          * @param serviceKey service key can be empty to get default service
          *
@@ -321,7 +321,7 @@ namespace sb::di
 
         /**
          * @brief Creates service in place, might throw exception
-         * @details If service was not registered or was registered as scoped/singleton, method throws exception
+         * @details If the service was not registered or was registered as scoped/singleton, method throws exception
          * @throws sb::di::ServiceNotFoundException
          *
          * Example:
@@ -349,7 +349,7 @@ namespace sb::di
 
         /**
          * @brief Creates service in place, might throw exception
-         * @details If service was not registered or was registered as scoped/singleton, method throws exception
+         * @details If the service was not registered or was registered as scoped/singleton, method throws exception
          * @throws sb::di::ServiceNotFoundException
          * @param serviceKey service key can be empty to get default service
          *
@@ -378,7 +378,7 @@ namespace sb::di
 
         /**
          * @brief Creates services
-         * @details If service was not registered or was registered as scoped/singleton, method returns empty vector
+         * @details If the service was not registered or was registered as scoped/singleton, method returns empty vector
          *
          * Example:
          * @code{.cpp}
@@ -403,7 +403,7 @@ namespace sb::di
 
         /**
          * @brief Creates services
-         * @details If service was not registered or was registered as scoped/singleton, method returns empty vector
+         * @details If the service was not registered or was registered as scoped/singleton, method returns empty vector
          * @param serviceKey service key can be empty to get default service
          *
          * Example:

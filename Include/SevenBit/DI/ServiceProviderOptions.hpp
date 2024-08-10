@@ -23,8 +23,8 @@ namespace sb::di
 
         /**
          * @brief Set global uniqueness check
-         * @details If set to true service provider will check if service implementation was already registered and
-         * throw exception in this case
+         * @details If a set to true service provider checks if service implementation was already registered and
+         * throws exception in this case
          */
         bool checkServiceGlobalUniqueness = true;
 

@@ -39,7 +39,7 @@ namespace sb::di
         constexpr static ServiceLifeTime transient() { return ServiceLifeTime{Type::Transient}; }
 
         /**
-         * @brief Construct a new Service Life Time object with specified type
+         * @brief Construct a new Service Life Time object with a specified type
          */
         constexpr explicit ServiceLifeTime(const Type type) : _type(details::Require::validEnumAndGet(type)) {}
 

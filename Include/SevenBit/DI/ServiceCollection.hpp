@@ -44,7 +44,7 @@ namespace sb::di
          * @brief Builds service provider with specified options
          * @details might throw exceptions
          * @throws sb::di::ServiceRegisterException if an error occurs during service registration
-         * registered with same base type
+         * registered with the same base type
          */
         ServiceProvider buildServiceProvider(ServiceProviderOptions options = {});
 
@@ -52,7 +52,7 @@ namespace sb::di
          * @brief Builds service provider as unique_ptr with specified options
          * @details might throw exceptions
          * @throws sb::di::ServiceRegisterException if an error occurs during service registration
-         * registered with same base type
+         * registered with the same base type
          */
         ServiceProvider::Ptr buildServiceProviderAsPtr(ServiceProviderOptions options = {});
 
@@ -290,7 +290,7 @@ namespace sb::di
         }
 
         /**
-         * @brief Adds descriptor to the end of list
+         * @brief Adds descriptor to the end of the list
          */
         ServiceCollection &add(ServiceDescriptor descriptor);
 
@@ -371,7 +371,7 @@ namespace sb::di
         std::size_t removeAll(TypeId serviceTypeId);
 
         /**
-         * @brief Removes all descriptors meeting requirement
+         * @brief Removes all descriptors meeting requirements
          * @code{.cpp}
          * descriptor.getServiceTypeId() == typeid(TService) && *descriptor.getServiceKey() == serviceKey
          * @endcode
@@ -449,7 +449,7 @@ namespace sb::di
          * @tparam TImplementation service implementation type must inherit from TService and must have one
          * constructor
          * @see Constructor requirements
-         * @param lifeTime service life time Singleton Scoped or Transient
+         * @param lifeTime service lifetime Singleton Scoped or Transient
          *
          * Example:
          * @code{.cpp}
@@ -469,7 +469,7 @@ namespace sb::di
          * @tparam TImplementation service implementation type must inherit from TService and must have one
          * constructor
          * @see Constructor requirements
-         * @param lifeTime service life time Singleton Scoped or Transient
+         * @param lifeTime service lifetime Singleton Scoped or Transient
          * @param serviceKey service key can be empty to describe default service
          *
          * Example:
@@ -679,7 +679,7 @@ namespace sb::di
          * @brief Adds service descriptor
          * @tparam TService base service type
          * @tparam FactoryFcn factory functor type
-         * @param lifeTime service life time Singleton Scoped or Transient
+         * @param lifeTime service lifetime Singleton Scoped or Transient
          * @param factory service factory functor with this scheme: (Services...) -> std::unique_ptr<TImplementation> |
          * TImplementation, where services are pointers, unique pointers, references, vectors with pointers or unique
          * pointers
@@ -700,7 +700,7 @@ namespace sb::di
          * @brief Adds keyed service descriptor
          * @tparam TService base service type
          * @tparam FactoryFcn factory functor type
-         * @param lifeTime service life time Singleton Scoped or Transient
+         * @param lifeTime service lifetime Singleton Scoped or Transient
          * @param serviceKey service key can be empty to describe default service
          * @param factory service factory functor with this scheme: (Services...) -> std::unique_ptr<TImplementation> |
          * TImplementation, where services are pointers, unique pointers, references, vectors with pointers or unique
@@ -842,7 +842,7 @@ namespace sb::di
         /**
          * @brief Adds service descriptor
          * @tparam FactoryFcn factory functor type
-         * @param lifeTime service life time Singleton Scoped or Transient
+         * @param lifeTime service lifetime Singleton Scoped or Transient
          * @param factory service factory functor with this scheme: (Services...) -> std::unique_ptr<TImplementation> |
          * TImplementation, where services are pointers, unique pointers, references, vectors with pointers or unique
          * pointers
@@ -860,7 +860,7 @@ namespace sb::di
         /**
          * @brief Adds keyed service descriptor
          * @tparam FactoryFcn factory functor type
-         * @param lifeTime service life time Singleton Scoped or Transient
+         * @param lifeTime service lifetime Singleton Scoped or Transient
          * @param serviceKey service key can be empty to describe default service
          * @param factory service factory functor with this scheme: (Services...) -> std::unique_ptr<TImplementation> |
          * TImplementation, where services are pointers, unique pointers, references, vectors with pointers or unique
